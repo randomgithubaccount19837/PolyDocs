@@ -12,31 +12,31 @@ icon: polytoria/Input
 
 ## Events
 
-### KeyDown(key;number) { event }
+### KeyDown(key;string) { event }
 
-Fires when a key is pressed. Uses an Unity key value.
+Fires when a key is pressed.
 
 **Example**
 
 ```lua
 Input.KeyDown:Connect(function (key)
-    print(tostring(key) .. " was pressed!")
+    print(key .. " was pressed!")
 
-    if key == 112 then
+    if key == "P" then
         print("The 'P' key was pressed!")
     end
 end)
 ```
 
-### KeyUp(key;number) { event }
+### KeyUp(key;string) { event }
 
 Fires when a key is released. Also uses an Unity key value.
 
 ```lua
 Input.KeyUp:Connect(function (key)
-    print(tostring(key) .. " was released!")
+    print(key .. " was released!")
 
-    if key == 112 then
+    if key == "P" then
         print("The 'P' key was released!")
     end
 end)
@@ -64,15 +64,15 @@ Returns `true` during the frame in which the specified button was pressed.
 
 Returns `true` during the frame in which the specified button was released.
 
-### GetKey(keyValue;number):bool { method }
+### GetKey(keyName;String):bool { method }
 
-Returns `true` if the specified key is being held down. Uses an Unity key value.
+Returns `true` if the specified key is being held down.
 
-### GetKeyDown(keyValue;number):bool { method }
+### GetKeyDown(keyName;string):bool { method }
 
-Returns `true` during the frame in which the specified key was pressed. Uses an Unity key value.
+Returns `true` during the frame in which the specified key was pressed.
 
-### GetKeyUp(keyValue;number):bool { method }
+### GetKeyUp(keyName;string):bool { method }
 
 Returns `true` during the frame in which the specified key was released. Uses an Unity key value.
 
