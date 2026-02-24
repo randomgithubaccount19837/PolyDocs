@@ -10,4 +10,5 @@ icon: polytoria/Enum
 | ------------------------- | ----------------------------------------------- |
 | `CameraMode.Scripted`     | Camera is able to be controlled by scripts      |
 | `CameraMode.FollowPlayer` | Camera is controlled by the player `(default)`  |
-| `CameraMode.FreeCam`      | Camera is able to be freely moved by the player |
+| `CameraMode.Free`         | Camera is able to be freely moved by the player |
+| `CameraMode.FollowTarget` | Camera follows a DynamicInstance                |
