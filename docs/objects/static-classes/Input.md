@@ -12,44 +12,37 @@ icon: polytoria/Input
 
 ## Events
 
-### KeyDown(key;string) { event }
+### KeyDown(key;number) { event }
 
-Fires when a key is pressed.
+Fires when a key is pressed. Uses an Unity key value.
 
 **Example**
 
 ```lua
 Input.KeyDown:Connect(function (key)
-    print(key .. " was pressed!")
+    print(tostring(key) .. " was pressed!")
 
-    if key == "P" then
+    if key == 112 then
         print("The 'P' key was pressed!")
     end
 end)
 ```
 
-### KeyUp(key;string) { event }
+### KeyUp(key;number) { event }
 
-Fires when a key is released.
+Fires when a key is released. Also uses an Unity key value.
 
 ```lua
 Input.KeyUp:Connect(function (key)
-    print(key .. " was pressed!")
+    print(tostring(key) .. " was released!")
 
-    if key == "P" then
-        print("The 'P' key was pressed!")
+    if key == 112 then
+        print("The 'P' key was released!")
     end
 end)
 ```
 
 ## Methods
-
-<div data-search-exclude markdown>
-!!! danger "Undocumented Methods"
-
-    This section is a work in progress! The method `GetMouseWorldPoint` is not written yet. Want to contribute? Go to the GitHub and open a pull request [here](https://github.com/Polytoria/Docs)!
-
-</div>
 
 ### GetAxis(axisName;string):float { method }
 
@@ -71,17 +64,17 @@ Returns `true` during the frame in which the specified button was pressed.
 
 Returns `true` during the frame in which the specified button was released.
 
-### GetKey(keyName;string):bool { method }
+### GetKey(keyValue;number):bool { method }
 
-Returns `true` if the specified key is being held down.
+Returns `true` if the specified key is being held down. Uses an Unity key value.
 
-### GetKeyDown(keyName;string):bool { method }
+### GetKeyDown(keyValue;number):bool { method }
 
-Returns `true` during the frame in which the specified key was pressed.
+Returns `true` during the frame in which the specified key was pressed. Uses an Unity key value.
 
-### GetKeyUp(keyName;string):bool { method }
+### GetKeyUp(keyValue;number):bool { method }
 
-Returns `true` during the frame in which the specified key was released.
+Returns `true` during the frame in which the specified key was released. Uses an Unity key value.
 
 ### GetMouseButton(mouseButton;int):bool { method }
 
@@ -99,13 +92,17 @@ Returns `true` during the frame in which the specified mouse button was released
 
 Returns the 3D world-space position corresponding to the current mouse cursor location.
 
+### GetMouseWorldPoint:Vector3 { method }
+
+Returns the 3D world-space position corresponding to the current mouse cursor location relative to the camera.
+
 ### ScreenPointToRay(position;Vector3, List ignoreList = null):RayResult { method }
 
 Cast a ray from the camera at screen point into the game world
 
 ### ViewportPointToRay(position;Vector3, List ignoreList = null):RayResult { method }
 
-Cast a ray from the camera at the specified ViewportPoint (Vector3 with components with values in range of 0 - 1 describing how far a point is to to right and to the top of the screen) into the game world
+Cast a ray from the camera at the specified ViewportPoint (Vector3 with components with values in range of 0 - 1 describing how far a point is to the right and to the top of the screen) into the game world
 
 ### ScreenToViewportPoint(screenPosition;Vector3):Vector3 { method }
 
