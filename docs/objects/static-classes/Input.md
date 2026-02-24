@@ -64,7 +64,7 @@ Returns `true` during the frame in which the specified button was pressed.
 
 Returns `true` during the frame in which the specified button was released.
 
-### GetKey(keyName;String):bool { method }
+### GetKey(keyName;string):bool { method }
 
 Returns `true` if the specified key is being held down.
 
